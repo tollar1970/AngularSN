@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <name>x_23937_angular_to.app_angular_todo</name>
+        <script><![CDATA[angular.module('todo', ['sn.glideAjax', 'sn.uiMacro']);
+angular.module('todo').directive('todoList', function(uiMacroTemplate) {
+return {
+restrict: 'E',
+templateUrl: uiMacroTemplate('x_23937_angular_to_todo_list'),
+controller: function($scope, GlideAjax) {
+	$scope.todos = [];
+	load();
+	
+	$scope.add = function(newTodo) {
+		$scope.todos.push(newTodo);
+		
+		var ga = new GlideAjax('TodoAppPersistence');
+		ga.addParam('sysparm_name', 'add');
+		ga.addParam('short_description', newTodo);
+		ga.setScope('x_23937_angular_to');
+		ga.getXML(function(response) {
+			// don't need to do anything here
+		});
+		
+	};
+	
+	function load() {
+		var ga = new GlideAjax('TodoAppPersistence');
+		ga.addParam('sysparm_name', 'getList');
+		ga.setScope('x_23937_angular_to');
+		ga.getXML(function(response) {
+			if (!response)
+				return;
+			var answer  = response.responseXML.documentElement.getAttribute ( "answer" );
+			$scope.todos = JSON.parse(answer); //response;
+		});
+	}
+}
+}
+});]]></script>
+        <script_name>app_angular_todo</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-05-20 12:39:11</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>3bd29b304fa31200e8fc7d218110c748</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>x_23937_angular_to.app_angular_todo</sys_name>
+        <sys_package display_value="Angular Todo" source="x_23937_angular_to">e22f3e384f631200e8fc7d218110c7a9</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Angular Todo">e22f3e384f631200e8fc7d218110c7a9</sys_scope>
+        <sys_update_name>sys_ui_script_3bd29b304fa31200e8fc7d218110c748</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-05-23 10:25:39</sys_updated_on>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>

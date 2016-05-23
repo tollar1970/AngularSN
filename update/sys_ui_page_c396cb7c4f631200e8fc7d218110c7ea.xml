@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_23937_angular_to_angular_todo.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<script language="javascript" src="x_23937_angular_to.Angular_1_3_framework.jsdbx" />
+<script src="x_23937_angular_to.app_angular_todo.jsdbx"></script>
+<script src="service.sn-glideAjax.jsdbx"></script>
+<script src="service.uiMacroTemplate.jsdbx"></script>
+<div ng-app="todo">
+<todo-list></todo-list>
+</div>
+</j:jelly>]]></html>
+        <name>angular_todo</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-05-20 11:43:58</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>c396cb7c4f631200e8fc7d218110c7ea</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>angular_todo</sys_name>
+        <sys_package display_value="Angular Todo" source="x_23937_angular_to">e22f3e384f631200e8fc7d218110c7a9</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Angular Todo">e22f3e384f631200e8fc7d218110c7a9</sys_scope>
+        <sys_update_name>sys_ui_page_c396cb7c4f631200e8fc7d218110c7ea</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-05-23 10:19:33</sys_updated_on>
+    </sys_ui_page>
+</record_update>

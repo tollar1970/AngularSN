@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_23937_angular_to.TodoAppPersistence</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>TodoAppPersistence</name>
+        <script><![CDATA[var TodoAppPersistence = Class.create();
+TodoAppPersistence.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	getList: function() {
+		var todos = new GlideRecord('x_23937_angular_to_angular_todo_list');
+		todos.addQuery('opened_by', gs.getUserID());
+		todos.orderBy('opened_at');
+		todos.query();
+		var list = [];
+		while (todos.next()) {
+			list.push(todos.short_description + '');
+		}
+		return new global.JSON().encodeArray(list);
+	},
+	
+	add: function() {
+		var todos = new GlideRecord('x_23937_angular_to_angular_todo_list');
+		todos.newRecord();
+		todos.short_description = this.getParameter('short_description');
+		todos.opened_by = gs.getUserID();
+		todos.insert();
+	},
+	
+	type: 'TodoAppPersistence'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-05-20 13:09:36</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>b30a5ff04fa31200e8fc7d218110c74c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>TodoAppPersistence</sys_name>
+        <sys_package display_value="Angular Todo" source="x_23937_angular_to">e22f3e384f631200e8fc7d218110c7a9</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Angular Todo">e22f3e384f631200e8fc7d218110c7a9</sys_scope>
+        <sys_update_name>sys_script_include_b30a5ff04fa31200e8fc7d218110c74c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-05-23 08:02:04</sys_updated_on>
+    </sys_script_include>
+</record_update>

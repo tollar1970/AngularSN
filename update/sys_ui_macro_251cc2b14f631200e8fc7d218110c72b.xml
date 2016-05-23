@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_macro">
+    <sys_ui_macro action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <description/>
+        <media_type/>
+        <name>todo_list</name>
+        <scoped_name>x_23937_angular_to_todo_list</scoped_name>
+        <sys_class_name>sys_ui_macro</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-05-23 10:08:32</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>251cc2b14f631200e8fc7d218110c72b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>todo_list</sys_name>
+        <sys_package display_value="Angular Todo" source="x_23937_angular_to">e22f3e384f631200e8fc7d218110c7a9</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Angular Todo">e22f3e384f631200e8fc7d218110c7a9</sys_scope>
+        <sys_update_name>sys_ui_macro_251cc2b14f631200e8fc7d218110c72b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-05-23 10:08:32</sys_updated_on>
+        <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<div class="col-md-6">
+<h1>Todo List</h1>
+<ul class="list-group">
+<li class="list-group-item" ng-repeat="todoItem in todos" ng-bind="todoItem"></li>
+</ul>
+<div>
+<label>Add new todo:
+<input class="form-control" ng-model="newTodo"/>
+</label>
+<button ng-click="add(newTodo)" type="button" class="btn btn-primary">Add Todo</button>
+</div>
+</div>
+</j:jelly>]]></xml>
+    </sys_ui_macro>
+</record_update>
